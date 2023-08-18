@@ -12,7 +12,9 @@ public class Main {
        Persona1.setFechaNacimiento(LocalDate.of(1989,03,21));
 
        //En estado
-        Persona1.getEstado();
+
+        System.out.println(Persona1.getEstado() ? "Se encuentra en estado" : "Se encuentra fuera de estado");
+
        //Cumpleaños
         System.out.println(Persona1.getCumpleAnios() ? "Hoy cumple años!!!" : "Hoy no es su cumpleaños :(");
 

@@ -108,12 +108,13 @@ public class Persona {
         return  this.peso/(Math.pow(this.altura,POTENCIA));
         }
     //Estado
-    public void getEstado(){
+    public boolean getEstado(){
+        boolean estado=false;
         if(this.getIMC()>=MIN && this.getIMC()<MAX){
-            System.out.println(this.getNombre()+ " se encuentra en estado");
+            return estado=true;
         }
         else{
-            System.out.println(this.getNombre()+" se encuentra fuera de estado");
+            return estado;
         }
     }
     //Cumpleaños
@@ -137,7 +138,7 @@ public class Persona {
             return mayorEdad=true;
         }
         else{
-            return mayorEdad=false;
+            return mayorEdad;
         }
     }
     //Puede votar
@@ -149,7 +150,7 @@ public class Persona {
             return vota=true;
         }
         else{
-            return vota=false;
+            return vota;
         }
     }
 
@@ -162,7 +163,7 @@ public class Persona {
             return edadValida=true;
         }
         else{
-            return edadValida=false;
+            return edadValida;
         }
     }
 
