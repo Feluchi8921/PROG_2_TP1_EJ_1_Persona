@@ -117,46 +117,52 @@ public class Persona {
         }
     }
     //Cumpleaños
-    public void getCumpleAnios(){
+    public boolean getCumpleAnios(){
+        boolean cumpleanios=false;
         LocalDate fecha_actual = LocalDate.now();
         if(fecha_actual.getMonth()==this.fecha_nacimiento.getMonth()
                 && fecha_actual.getDayOfMonth()==this.fecha_nacimiento.getDayOfMonth()){
-            System.out.println("Hoy cumple años!!!");
+            return cumpleanios=true;
         }
         else{
-            System.out.println("Hoy no es su cumpleaños :(");
+            return cumpleanios=false;
         }
     }
     //Mayor de edad
-    public void getMayorEdad(){
+    public boolean getMayorEdad(){
+        boolean mayorEdad=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
         if(periodo.getYears()>=MAYOREDAD){
-            System.out.println("Es mayor de edad");
+            return mayorEdad=true;
         }
         else{
-            System.out.println("Es menor de edad");
+            return mayorEdad=false;
         }
     }
     //Puede votar
-    public void getVotar(){
+    public boolean getVotar(){
+        boolean vota=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
         if(periodo.getYears()>=VOTA){
-            System.out.println("Está habilitado para votar");
+            return vota=true;
         }
         else{
-            System.out.println("No está habilitado para votar");
+            return vota=false;
         }
     }
-    public void validarEdad(){
+
+    //Edad correcta
+    public boolean validarEdad(){
+        boolean edadValida=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
         if(periodo.getYears()==this.edad){
-            System.out.println("La edad es correcta");
+            return edadValida=true;
         }
         else{
-            System.out.println("La edad es incorrecta");
+            return edadValida=false;
         }
     }
 
