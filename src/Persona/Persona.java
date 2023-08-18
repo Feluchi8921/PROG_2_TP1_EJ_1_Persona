@@ -119,7 +119,8 @@ public class Persona {
     //Cumpleaños
     public void getCumpleAnios(){
         LocalDate fecha_actual = LocalDate.now();
-        if(fecha_actual.equals(this.fecha_nacimiento)){
+        if(fecha_actual.getMonth()==this.fecha_nacimiento.getMonth()
+                && fecha_actual.getDayOfMonth()==this.fecha_nacimiento.getDayOfMonth()){
             System.out.println("Hoy cumple años!!!");
         }
         else{
