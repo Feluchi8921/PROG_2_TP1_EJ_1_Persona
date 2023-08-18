@@ -14,37 +14,16 @@ public class Main {
        //En estado
         Persona1.getEstado();
        //Cumpleaños
-       if(Persona1.getCumpleAnios()==true) {
-           System.out.println("Hoy cumple años!!!");
-       }
-       else{
-           System.out.println("Hoy no es su cumpleaños :(");
-       }
+        System.out.println(Persona1.getCumpleAnios() ? "Hoy cumple años!!!" : "Hoy no es su cumpleaños :(");
 
        //Mayor de edad
-        if(Persona1.getMayorEdad()==true){
-            System.out.println("Es mayor de edad");
-        }
-       else{
-            System.out.println("Es menor de edad");
-        }
+        System.out.println(Persona1.getMayorEdad() ? "Es mayor de edad" :"Es menor de edad");
 
         //Votar
-        if(Persona1.getVotar()==true){
-            System.out.println("Está habilitado para votar");
-        }
-        else {
-            System.out.println("No está habilitado para votar");
-        }
+        System.out.println(Persona1.getVotar() ? "Está habilitado para votar" : "No está habilitado para votar");
 
         //Validar edad
-        if(Persona1.validarEdad()==true){
-            System.out.println("La edad es correcta");
-        }
-        else{
-            System.out.println("La edad es incorrecta");
-
-        }
+        System.out.println(Persona1.validarEdad() ? "La edad es correcta" : "La edad es incorrecta");
 
         //Datos de la Persona
         System.out.println("Datos completos de la persona:");
