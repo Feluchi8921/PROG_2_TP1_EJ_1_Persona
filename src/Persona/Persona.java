@@ -109,62 +109,34 @@ public class Persona {
         }
     //Estado
     public boolean getEstado(){
-        boolean estado=false;
-        if(this.getIMC()>=MIN && this.getIMC()<MAX){
-            return estado=true;
-        }
-        else{
-            return estado;
-        }
+
+        return (this.getIMC()>=MIN && this.getIMC()<MAX);
+
     }
     //Cumpleaños
     public boolean getCumpleAnios(){
-        boolean cumpleanios=false;
         LocalDate fecha_actual = LocalDate.now();
-        if(fecha_actual.getMonth()==this.fecha_nacimiento.getMonth()
-                && fecha_actual.getDayOfMonth()==this.fecha_nacimiento.getDayOfMonth()){
-            return cumpleanios=true;
-        }
-        else{
-            return cumpleanios=false;
-        }
+        return(fecha_actual.getMonth()==this.fecha_nacimiento.getMonth()
+                && fecha_actual.getDayOfMonth()==this.fecha_nacimiento.getDayOfMonth());
     }
     //Mayor de edad
     public boolean getMayorEdad(){
-        boolean mayorEdad=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
-        if(periodo.getYears()>=MAYOREDAD){
-            return mayorEdad=true;
-        }
-        else{
-            return mayorEdad;
-        }
+        return(periodo.getYears()>=MAYOREDAD);
     }
     //Puede votar
     public boolean getVotar(){
-        boolean vota=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
-        if(periodo.getYears()>=VOTA){
-            return vota=true;
-        }
-        else{
-            return vota;
-        }
+        return (periodo.getYears()>=VOTA);
     }
 
     //Edad correcta
     public boolean validarEdad(){
-        boolean edadValida=false;
         LocalDate fecha_actual = LocalDate.now();
         Period periodo = Period.between(this.fecha_nacimiento, fecha_actual);
-        if(periodo.getYears()==this.edad){
-            return edadValida=true;
-        }
-        else{
-            return edadValida;
-        }
+        return(periodo.getYears()==this.edad);
     }
 
     public void getPersona(){
